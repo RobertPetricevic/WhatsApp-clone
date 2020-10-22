@@ -3,6 +3,7 @@ import React from "react";
 import { Avatar, IconButton } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
+import MessageBox from "../components/MessageBox";
 
 function ChatScreen() {
   if (false) {
@@ -24,7 +25,14 @@ function ChatScreen() {
           </IconButton>
         </div>
       </div>
-      <div className="chat-body">body</div>
+      <div className="chat-body">
+        <MessageBox
+          message="Bla bla bla bla bla bla bla bla bla bla"
+          receiver
+        />
+        <MessageBox message="Blbla bla" />
+        <MessageBox message="Bla a bla bla bla bla bla" receiver />
+      </div>
       <div className="chat-footer">footer</div>
     </div>
   );

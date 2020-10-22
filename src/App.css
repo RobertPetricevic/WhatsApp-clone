@@ -145,6 +145,8 @@ p {
   width: 65%;
 }
 
+/* -------------------------CHAT-HEADER-------------------------- */
+
 .chat-header {
   display: flex;
   align-items: center;
@@ -163,10 +165,56 @@ p {
   font-size: 20px;
 }
 
+/* -------------------------CHAT-BODY-------------------------- */
+
 .chat-body {
   flex: 1;
-  background-color: green;
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  padding: 40px 20px;
 }
+
+/* -------------------------CHAT-MESSAGE-BOX-------------------------- */
+
+.message-box {
+  background-color: white;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.message-box-receiver {
+  background-color: rgb(188, 255, 144);
+  margin-left: auto;
+}
+
+.message-sender {
+  position: absolute;
+  top: -20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-text {
+  width: 80%;
+}
+
+.message-timestamp {
+  width: 10%;
+  font-size: 10px;
+  color: gray;
+  align-self: flex-end;
+  margin-left: 10px;
+}
+
+/* -------------------------CHAT-FOOTER-------------------------- */
 
 .chat-footer {
   height: 65px;

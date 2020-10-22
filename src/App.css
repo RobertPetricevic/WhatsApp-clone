@@ -27,7 +27,6 @@ p {
 .sidebar-header {
   display: flex;
   flex-direction: column;
-  background-color: #ededed00;
   height: 120px;
 }
 
@@ -62,7 +61,7 @@ p {
 .sidebar-header-input {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 90%;
   background-color: white;
   padding: 5px;
   border-radius: 20px;
@@ -86,7 +85,7 @@ p {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  height: 60px;
+  height: 50px;
   padding: 10px 5px;
   border-bottom: 1px solid rgba(202, 198, 198, 0.651);
 }
@@ -133,5 +132,43 @@ p {
 /* -------------------------CHAT-SCREEN-------------------------- */
 
 .chat {
+  display: flex;
+  flex-direction: column;
   width: 65%;
+  background-color: rgb(240, 238, 238);
+}
+
+.no-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  padding: 0 10px;
+}
+
+.room-info {
+  display: flex;
+  align-items: center;
+}
+
+.room-name {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.chat-body {
+  flex: 1;
+  background-color: green;
+}
+
+.chat-footer {
+  height: 65px;
+  background-color: blue;
 }

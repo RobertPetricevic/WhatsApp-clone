@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Avatar, IconButton } from "@material-ui/core";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
@@ -7,10 +7,18 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
 
 function SidebarHeader() {
+  const [avatar, setAvatar] = useState("");
+
+  const AVATAR_URL = `https://avatars.dicebear.com/api/human/${avatar}.svg`;
+
+  useEffect(() => {
+    setAvatar(Math.floor(Math.random() * 5000));
+  }, []);
+
   return (
     <div className="sidebar-header">
       <div className="sidebar-header-top">
-        <Avatar />
+        <Avatar src={AVATAR_URL} />
         <div className="icons-box">
           <IconButton size="small" className={"MyCustomButton"}>
             <DonutLargeIcon fontSize="small" />

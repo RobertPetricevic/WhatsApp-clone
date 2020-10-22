@@ -6,7 +6,7 @@ import ChatScreen from "./screens//ChatScreen";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App card">
       <SidebarScreen />
       <ChatScreen />
     </div>

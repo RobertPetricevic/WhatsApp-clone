@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import db from "../firebase";
 
 import ChatHeader from "../components/ChatHeader";
 import ChatBody from "../components/ChatBody";
 import ChatFooter from "../components/ChatFooter";
 
 function ChatScreen() {
-  const AVATAR_URL = `https://avatars.dicebear.com/api/human/${""}.svg`;
+  const { roomId } = useParams();
 
-  if (false) {
-    return <div className="no-chat">Click on chat in sidebar</div>;
-  }
+  const [roomName, setRoomName] = useState();
+
+  useEffect(() => {
+    const unsubscribe = db
+      .collection("rooms")
+      .doc(roomId)
+      .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+
+    return () => {
+      unsubscribe();
+    };
+  }, [roomId]);
 
   return (
     <div className="chat-screen">
-      <ChatHeader />
+      <ChatHeader name={roomName} />
       <ChatBody />
       <ChatFooter />
     </div>

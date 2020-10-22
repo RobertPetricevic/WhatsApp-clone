@@ -103,6 +103,7 @@ p {
 
 .chat-box:hover {
   background-color: rgb(240, 238, 238);
+  cursor: pointer;
 }
 
 .chat-box-add-new:hover {
@@ -128,7 +129,7 @@ p {
 }
 
 .chat-box-name {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 

@@ -23,7 +23,7 @@
 .sidebar-header {
   display: flex;
   flex-direction: column;
-  background-color: #ededed;
+  background-color: #ededed00;
   height: 120px;
 }
 
@@ -35,15 +35,10 @@
 .sidebar-header-top {
   display: flex;
   flex-direction: row;
-  height: 50%;
+  height: 60%;
   justify-content: space-between;
   align-items: center;
   padding: 0px 5px;
-}
-
-.sidebar-header-input {
-  height: 50%;
-  background-color: #ffffff75;
 }
 
 .icons-box {
@@ -55,4 +50,28 @@
 
 .MyCustomButton:hover {
   color: rgba(19, 138, 19, 0.603) !important;
+}
+
+.sidebar-header-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  background-color: #ffffff4d;
+}
+
+.sidebar-header-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  background-color: white;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.sidebar-header-input input {
+  border: none;
+  outline: none;
+  width: 70%;
 }

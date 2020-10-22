@@ -93,8 +93,21 @@ p {
   border-bottom: 1px solid rgba(202, 198, 198, 0.651);
 }
 
+.chat-box-add-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-weight: bold;
+}
+
 .chat-box:hover {
   background-color: rgb(240, 238, 238);
+}
+
+.chat-box-add-new:hover {
+  background-color: rgb(240, 238, 238);
+  cursor: cell;
 }
 
 .chat-box-info {

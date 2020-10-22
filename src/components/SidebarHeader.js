@@ -36,7 +36,7 @@ function SidebarHeader() {
           <IconButton size="small" className={"MyCustomButton"}>
             <SearchIcon fontSize="small" />
           </IconButton>
-          <input type="text" placeholder="Start new chat" />
+          <input type="text" placeholder="Search rooms" />
         </div>
       </div>
     </div>

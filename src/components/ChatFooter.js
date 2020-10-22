@@ -9,10 +9,10 @@ function ChatFooter() {
   return (
     <div className="chat-footer">
       <IconButton size="small" className={"MyCustomButton"}>
-        <InsertEmoticonIcon fontSize="medium" />
+        <InsertEmoticonIcon fontSize="small" />
       </IconButton>
       <IconButton size="small" className={"MyCustomButton"}>
-        <AttachFileIcon fontSize="medium" />
+        <AttachFileIcon fontSize="small" />
       </IconButton>
       <form className="footer-form">
         <textarea
@@ -25,7 +25,7 @@ function ChatFooter() {
         </button>
       </form>
       <IconButton size="small" className={"MyCustomButton"}>
-        <MicIcon fontSize="medium" />
+        <MicIcon fontSize="small" />
       </IconButton>
     </div>
   );

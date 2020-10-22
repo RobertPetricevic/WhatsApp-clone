@@ -13,10 +13,10 @@ function ChatHeader() {
       </div>
       <div className="room-icons">
         <IconButton size="small" className={"MyCustomButton"}>
-          <SearchIcon fontSize="medium" />
+          <SearchIcon fontSize="small" />
         </IconButton>
         <IconButton size="small" className={"MyCustomButton"}>
-          <MoreVertIcon fontSize="medium" />
+          <MoreVertIcon fontSize="small" />
         </IconButton>
       </div>
     </div>

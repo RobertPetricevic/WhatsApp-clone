@@ -7,7 +7,6 @@ import db from "../firebase";
 function ChatBox(props) {
   const [avatar, setAvatar] = useState("");
   const [messages, setMessages] = useState([]);
-  console.log("messages:", messages);
 
   const AVATAR_URL = `https://avatars.dicebear.com/api/human/${avatar}.svg`;
 

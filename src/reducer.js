@@ -1,9 +1,11 @@
 export const initialState = {
   user: null,
+  searchRooms: "",
 };
 
 export const actionTypes = {
   SET_USER: "SET_USER",
+  SEARCH_ROOMS: "SEARCH_ROOMS",
 };
 
 const reducer = (state, action) => {
@@ -13,7 +15,11 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
-
+    case actionTypes.SEARCH_ROOMS:
+      return {
+        ...state,
+        searchRooms: action.searchText,
+      };
     default:
       break;
   }

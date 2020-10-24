@@ -6,6 +6,8 @@ import db from "../firebase";
 
 function ChatBox(props) {
   const [avatar, setAvatar] = useState("");
+  const [messages, setMessages] = useState([]);
+  console.log("messages:", messages);
 
   const AVATAR_URL = `https://avatars.dicebear.com/api/human/${avatar}.svg`;
 
@@ -23,6 +25,18 @@ function ChatBox(props) {
     setAvatar(Math.floor(Math.random() * 5000));
   }, []);
 
+  useEffect(() => {
+    if (!props.addNew) {
+      db.collection("rooms")
+        .doc(props.id)
+        .collection("messages")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, [props.id]);
+
   if (props.addNew) {
     return (
       <div className="chat-box-add-new" onClick={createNewChat}>
@@ -38,13 +52,8 @@ function ChatBox(props) {
           <Avatar src={AVATAR_URL} />
         </div>
         <div className="chat-box-info">
-          <div className="chat-box-left">
-            <p className="chat-box-name">{props.name}</p>
-            <p className="chat-box-message">Blabla bla bla gggggblabla</p>
-          </div>
-          <div className="chat-box-right">
-            <p className="last-seen">12:07</p>
-          </div>
+          <p className="chat-box-name">{props.name}</p>
+          <p className="chat-box-message">{messages[0]?.message}</p>
         </div>
       </div>
     </Link>

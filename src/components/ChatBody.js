@@ -2,14 +2,17 @@ import React from "react";
 
 import MessageBox from "../components/MessageBox";
 
-function ChatBody() {
-  return (
-    <div className="chat-body">
-      <MessageBox message="Bla bla bla bla bla bla bla bla bla bla" receiver />
-      <MessageBox message="Blbla bla" />
-      <MessageBox message="Bla a bla bla bla bla bla" receiver />
-    </div>
-  );
+function ChatBody(props) {
+  const displayedMessages = props.messages.map((message) => (
+    <MessageBox
+      key={message.timestamp}
+      name={message.name}
+      message={message.message}
+      timestamp={message.timestamp}
+    />
+  ));
+
+  return <div className="chat-body">{displayedMessages}</div>;
 }
 
 export default ChatBody;

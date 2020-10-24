@@ -11,7 +11,7 @@ import { useContextValue } from "./Context";
 function App() {
   const [{ user }, dispatch] = useContextValue();
 
-  if (!user) {
+  if (user) {
     return <Login />;
   }
 

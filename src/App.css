@@ -52,7 +52,7 @@ p {
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 238, 238);
-  width: 35%;
+  width: 30%;
 }
 
 /* -------------------------SIDEBAR-HEADER-------------------------- */
@@ -184,7 +184,7 @@ p {
 .chat-screen {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 70%;
   background-color: rgb(240, 238, 238);
 }
 
@@ -222,6 +222,8 @@ p {
   flex: 1;
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   padding: 40px 20px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 /* -------------------------CHAT-MESSAGE-BOX-------------------------- */
@@ -229,10 +231,11 @@ p {
 .message-box {
   background-color: white;
   padding: 10px 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-radius: 20px;
   position: relative;
   width: fit-content;
+  max-width: 90%;
 }
 
 .message-box-receiver {
@@ -242,23 +245,26 @@ p {
 
 .message-sender {
   position: absolute;
-  top: -20px;
+  top: -23px;
   font-size: 14px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .message-body {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .message-text {
-  width: 80%;
+  max-width: 70%;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .message-timestamp {
-  width: 10%;
+  width: fit-content;
   font-size: 10px;
   color: gray;
   align-self: flex-end;

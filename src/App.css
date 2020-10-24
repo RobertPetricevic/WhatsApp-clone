@@ -161,6 +161,9 @@ p {
 .chat-box-name {
   font-size: 16px;
   font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .chat-box-message {

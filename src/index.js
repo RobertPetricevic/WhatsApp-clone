@@ -5,11 +5,16 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
+import { ContextProvider } from "./Context";
+import reducer, { initialState } from "./reducer";
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <ContextProvider initialState={initialState} reducer={reducer}>
+      <Router>
+        <App />
+      </Router>
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

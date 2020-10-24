@@ -1,12 +1,20 @@
 import React from "react";
 import { auth, provider } from "../firebase";
 
+import { useContextValue } from "../Context";
+import { actionTypes } from "../reducer";
+
 function Login() {
+  const [{}, dispatch] = useContextValue();
+
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
       })
       .catch((err) => {
         alert(err.message);

@@ -86,6 +86,26 @@ a {
   color: rgb(19, 138, 19) !important;
 }
 
+.LogoutBtn {
+  position: relative;
+}
+
+.logout-text {
+  position: absolute;
+  font-size: 10px;
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  bottom: -20px;
+  padding: 2px;
+  visibility: hidden;
+}
+
+.LogoutBtn:hover .logout-text {
+  visibility: visible;
+}
+
 .sidebar-header-bottom {
   display: flex;
   justify-content: center;

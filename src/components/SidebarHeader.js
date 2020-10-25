@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Avatar, IconButton } from "@material-ui/core";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import ChatIcon from "@material-ui/icons/Chat";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SearchIcon from "@material-ui/icons/Search";
 import { useContextValue } from "../Context";
 import { actionTypes } from "../reducer";
@@ -17,6 +17,19 @@ function SidebarHeader() {
 
   const changeInputHandler = (e) => {
     setTextInput(e.target.value);
+    if (e.target.value === "") {
+      dispatch({
+        type: actionTypes.SEARCH_ROOMS,
+        searchText: "",
+      });
+    }
+  };
+
+  const logOut = () => {
+    dispatch({
+      type: actionTypes.SET_USER,
+      user: null,
+    });
   };
 
   const searchRooms = (e) => {
@@ -24,7 +37,6 @@ function SidebarHeader() {
       type: actionTypes.SEARCH_ROOMS,
       searchText: textInput,
     });
-    setTextInput("");
   };
 
   useEffect(() => {
@@ -42,8 +54,13 @@ function SidebarHeader() {
           <IconButton size="small" className={"MyCustomButton"}>
             <ChatIcon fontSize="small" />
           </IconButton>
-          <IconButton size="small" className={"MyCustomButton"}>
-            <MoreVertIcon fontSize="small" />
+          <IconButton
+            size="small"
+            className={"MyCustomButton LogoutBtn"}
+            onClick={logOut}
+          >
+            <span className="logout-text">LOGOUT</span>
+            <ExitToAppIcon fontSize="small" />
           </IconButton>
         </div>
       </div>
